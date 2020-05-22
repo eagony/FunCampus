@@ -7,52 +7,53 @@
 - ##### 安装
 
 1. 下载项目
-`git clone https://github.com/eagony/FunCampus.git`
+
+    `git clone https://github.com/eagony/FunCampus.git`
     
-`cd FunCampus`
+    `cd FunCampus`
     
 2. 部署后端
 
-`cd  backend`
+    `cd  backend`
 
-创建虚拟环境
+    创建虚拟环境
 
-`python -m venv venv`
+    `python -m venv venv`
 
-激活虚拟环境
+    激活虚拟环境
 
-`venv\Scripts\activate`
+    `venv\Scripts\activate`
 
-安装依赖
+    安装依赖
 
-`pip install -r requirements.txt`
+    `pip install -r requirements.txt`
 
-这里因为flask_uploads导入werkzeug有点小问题,需要将venv\lib\site-packages\flask_uploads.py第26行的
+    这里因为flask_uploads导入werkzeug有点小问题,需要将venv\lib\site-packages\flask_uploads.py第26行的
 
-`from werkzeug import secure_filename, FileStorage`
+    `from werkzeug import secure_filename, FileStorage`
 
-改成
+    改成
 
 ```python
-from werkzeug.utils import secure_filename
-from werkzeug.datastructures import FileStorage
+    from werkzeug.utils import secure_filename
+    from werkzeug.datastructures import FileStorage
 ```
 
-同步数据库
+    同步数据库
 
-`flask db upgrade`
+    `flask db upgrade`
 
-部署
+    部署
 
-flask deploy
+    `flask deploy`
 
-启动
+    启动
 
-flask run
+    `flask run`
 
-测试，打开浏览器输入http://localhost:5000/api/ping如果返回"Pong"则后端启动成功
+    测试，打开浏览器输入http://localhost:5000/api/ping如果返回"Pong"则后端启动成功
 
-3.部署前端
+3. 部署前端
 
     先安装Node.js，前往 [官方网站](https://nodejs.org/zh-cn/) 下载并安装 `LTS` 版本
 
